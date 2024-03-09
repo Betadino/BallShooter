@@ -9,7 +9,7 @@ public class GPObserver : MonoBehaviour
     {
         // Find the subject object and subscribe to its event
          
-        
+            Subject.gameStart += GameInitVar;
             Subject.changeScore += ChangeScore;
             Subject.changeShots += ChangeShots;
             Subject.changeLives += ChangeLives;
@@ -36,7 +36,14 @@ public class GPObserver : MonoBehaviour
     }
     private void ChangeLives()
     {
-       ++GameState.shotsFired;
+       --GameState.life;
     }
+
+     private void GameInitVar(){
+        GameState.shotsFired = 0;
+        GameState.spheresKilled = 0;
+        GameState.score = 0;
+        GameState.life =2;
+     }
 
 }

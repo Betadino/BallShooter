@@ -6,12 +6,7 @@ public sealed class GameState
     public static int score { get; set; }
     public static int life { get; set; }
 
-    private GameState() {
-        GameState.shotsFired = 0;
-        GameState.spheresKilled = 0;
-        GameState.score = 0;
-        GameState.life =2;
-    }
+    private GameState() {}
 
     
     public static GameState Instance

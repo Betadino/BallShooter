@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -347,7 +347,6 @@ GameObject:
   - component: {fileID: 1039703681}
   - component: {fileID: 1039703683}
   - component: {fileID: 1039703682}
-  - component: {fileID: 1039703684}
   m_Layer: 5
   m_Name: Livescount
   m_TagString: Untagged
@@ -394,7 +393,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '0
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -471,19 +472,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1039703680}
   m_CullTransparentMesh: 1
---- !u!114 &1039703684
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1039703680}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dacdea1fdc107f24e949f445aa281b92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives: {fileID: 0}
 --- !u!1 &1414251200
 GameObject:
   m_ObjectHideFlags: 0
@@ -630,6 +618,7 @@ GameObject:
   - component: {fileID: 1478225440}
   - component: {fileID: 1478225439}
   - component: {fileID: 1478225438}
+  - component: {fileID: 1478225442}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -721,6 +710,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1478225442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478225437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacdea1fdc107f24e949f445aa281b92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1479385794
 GameObject:
   m_ObjectHideFlags: 0
@@ -732,7 +733,8 @@ GameObject:
   - component: {fileID: 1479385798}
   - component: {fileID: 1479385797}
   - component: {fileID: 1479385796}
-  - component: {fileID: 1479385795}
+  - component: {fileID: 1479385799}
+  - component: {fileID: 1479385800}
   m_Layer: 0
   m_Name: Observer
   m_TagString: Untagged
@@ -740,19 +742,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1479385795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1479385794}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b8f13bf1a6a121488c7417d254c1dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: {fileID: 0}
 --- !u!114 &1479385796
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -792,6 +781,33 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1479385799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479385794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b8f13bf1a6a121488c7417d254c1dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: {fileID: 1039703682}
+  score: {fileID: 0}
+  shots: {fileID: 0}
+--- !u!114 &1479385800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479385794}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05d3da098948e854880485c98094654f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

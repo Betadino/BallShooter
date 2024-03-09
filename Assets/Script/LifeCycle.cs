@@ -28,4 +28,7 @@ public class LifeCycle : MonoBehaviour
             GameState.life -= 1;
         }
     }
+
+
+    
 }
