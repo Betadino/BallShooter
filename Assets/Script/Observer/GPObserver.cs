@@ -5,6 +5,7 @@ using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 public class GPObserver : MonoBehaviour
 {
+   //with mono inheritance START is subscribe  and OnDestroy is unsubscribe to the events.
     private void Start()
     {
         // Find the subject object and subscribe to its event

@@ -8,12 +8,9 @@ public class Subject : MonoBehaviour
 {
     // Declare event for notifying observers
 
-    public static event Action gameStart;
-    public static event Action gameOver;
-    public static event Action changeShots;
-    public static event Action changeLives;
+   
+    public static event Action setScore , reload , changeLives , changeShots , gameOver, gameStart;
     public static event Action<int> changeScore;
-    
     
     
 
@@ -40,6 +37,16 @@ public class Subject : MonoBehaviour
     public static void ChangeShots()
     {   
         changeShots?.Invoke();
+    }
+
+    public static void SetScore()
+    {   
+        setScore?.Invoke();
+    }
+
+    public static void Reload()
+    {   
+        reload?.Invoke();
     }
     
     

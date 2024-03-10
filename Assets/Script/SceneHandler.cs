@@ -5,10 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class SceneHandler : MonoBehaviour
 {
-    public static void LoadScene(string s)
+    public static void LoadSceneSingle(string s)
     {
-        
-        // Only specifying the sceneName or sceneBuildIndex will load the Scene with the Single mode
         SceneManager.LoadScene(s, LoadSceneMode.Single);
     }
+
+    public static void LoadSceneAdd(string s)
+    {
+        SceneManager.LoadScene(s, LoadSceneMode.Additive);
+    }
+
+    
 }

@@ -1,3 +1,4 @@
+//THIS IS THE SINGLETON -- it is initialized with lazy init on calling a variable
 public sealed class GameState
 {
     private static GameState instance = null;

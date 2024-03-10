@@ -9,7 +9,7 @@ using static UnityEditor.PlayerSettings;
 
 public class ClickNDestroy : MonoBehaviour
 {
- 
+    //Provides the Functionaliity to kill them bawls.
     // Update is called once per frame
     void Update()
     {
