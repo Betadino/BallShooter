@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Windows;
-using static UnityEditor.PlayerSettings;
 
 public class ClickNDestroy : MonoBehaviour
 {

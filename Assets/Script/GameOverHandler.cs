@@ -13,4 +13,7 @@ public class GameOverHandler : MonoBehaviour
     public void Reload(){
         Subject.Reload();
     }
+     public void Quit(){
+        Application.Quit();
+    }
 }
