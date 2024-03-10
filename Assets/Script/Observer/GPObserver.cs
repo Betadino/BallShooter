@@ -20,7 +20,7 @@ public class GPObserver : MonoBehaviour
     private void OnDestroy()
     {
         // Unsubscribe from the event when this object is destroyed
-         
+             Subject.gameStart -= GameInitVar;
             Subject.changeScore -= ChangeScore;
             Subject.changeShots -= ChangeShots;
             Subject.changeLives -= ChangeLives;

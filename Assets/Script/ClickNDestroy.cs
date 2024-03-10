@@ -26,9 +26,9 @@ public class ClickNDestroy : MonoBehaviour
                     Subject.ChangeScore(10);
                 }
             }            
-            Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
+            //Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * hit.distance, Color.yellow);
         }
-        Debug.DrawRay(ray.origin, ray.direction * 100, Color.yellow);
+        //Debug.DrawRay(ray.origin, ray.direction * 100, Color.yellow);
 
     }
 
