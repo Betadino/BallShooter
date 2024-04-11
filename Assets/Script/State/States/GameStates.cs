@@ -1,10 +1,12 @@
+using UnityEngine;
 using UnityEditor.UIElements;
 
 public class RunningState : IGameState
 {
-    public void OnEnterState(Player player)
+    public void OnEnterState()
     {
-        player.SetState(new AliveState());
+        
+        Subject.GameStart();
     }
     public void OnUpdateState()
     {}
@@ -14,8 +16,10 @@ public class RunningState : IGameState
 
 public class EndedState : IGameState
 {
-    public void OnEnterState(Player? player)
-    {}
+    public void OnEnterState()
+    {
+        Subject.GameOver();
+    }
     public void OnUpdateState()
     {}
     public void OnExitState()

@@ -6,15 +6,17 @@ using UnityEditor;
 
 public class Subject : MonoBehaviour
 {
-    // Declare event for notifying observers
+
 
    
     public static event Action setScore , reload , changeLives , changeShots , gameOver, gameStart;
     public static event Action<int> changeScore;
-    
-    
 
-    // Notifies all observers when an event occurs
+    //para passar instancia bola e o objeto a destruir por referencia
+    public static event Action<Ball,GameObject> explosion, killed;
+
+    
+    
     
 
     public static void GameStart()
@@ -48,6 +50,16 @@ public class Subject : MonoBehaviour
     {   
         reload?.Invoke();
     }
+
+    public static void Explosion(Ball ball, GameObject go)
+    {   
+        explosion?.Invoke(ball, go);
+    }
+     public static void Killed(Ball ball,GameObject go)
+    {   
+        killed?.Invoke(ball, go);
+    }
+    
     
     
 }

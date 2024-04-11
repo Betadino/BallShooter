@@ -3,48 +3,56 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-public class GPObserver : MonoBehaviour
+
+//Handles all gamedata
+public class GPObserver
 {
-   //with mono inheritance START is subscribe  and OnDestroy is unsubscribe to the events.
-    private void Start()
+    public void SubAll()
     {
-        // Find the subject object and subscribe to its event
-         
+        // Find the subject object and subscribe to its event   
             Subject.gameStart += GameInitVar;
             Subject.changeScore += ChangeScore;
             Subject.changeShots += ChangeShots;
             Subject.changeLives += ChangeLives;
-        
+            Subject.explosion += Explosion;
     }
 
-    private void OnDestroy()
+    public void UnsubAll()
     {
         // Unsubscribe from the event when this object is destroyed
-             Subject.gameStart -= GameInitVar;
+            Subject.gameStart -= GameInitVar;
             Subject.changeScore -= ChangeScore;
             Subject.changeShots -= ChangeShots;
             Subject.changeLives -= ChangeLives;
+            Subject.explosion -= Explosion;
     }
 
 
     private void ChangeScore(int points)
     {
-       GameState.score+=points;
+       GameData.score+=points;
     }
     private void ChangeShots()
     {
-       ++GameState.shotsFired;
+       ++GameData.shotsFired;
     }
     private void ChangeLives()
     {
-       --GameState.life;
+       --GameData.life;
     }
 
      private void GameInitVar(){
-        GameState.shotsFired = 0;
-        GameState.spheresKilled = 0;
-        GameState.score = 0;
-        GameState.life =2;
+        GameData.shotsFired = 0;
+        GameData.spheresKilled = 0;
+        GameData.score = 0;
+        GameData.life =2;
      }
+
+     private void Explosion(Ball ball, GameObject go)
+     {
+      ball.SetState(new BallExplodeState(), ball , go);
+     }
+
+     
 
 }

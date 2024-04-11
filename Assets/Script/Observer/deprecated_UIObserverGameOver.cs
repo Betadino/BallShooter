@@ -8,7 +8,9 @@ using UnityEngine.Rendering;
 using UnityEngine.UI;
 public class UIObserverGameOver : MonoBehaviour
 {
-    public TMP_Text score, shots;
+
+    //DEPRECATED**s
+    /*public TMP_Text score, shots;
     
     private void Start()
     {
@@ -33,7 +35,7 @@ public class UIObserverGameOver : MonoBehaviour
 
     private void GameReload(){
         SceneHandler.LoadSceneSingle("Main");
-    }
+    }*/
 
     
 

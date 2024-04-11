@@ -5,33 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class LifeCycle : MonoBehaviour
 {
-    //Responsible for the TTL of balls. Deduction of player lives if not hit and died instead.
-    float timer;
-    // Start is called before the first frame update
+    
+    Ball ball = new();
     void Start()
     {   
-       
-        timer = 1.5f;
+        //set state, envia a ball para poder manipular no OnEnterState e o go para poder destruir depois
+        //uma cadeia de acontecimentos complexa, mas desnecessária, provando o conceito de usar statemachine + observer
+        ball.SetState(new BallAliveState(), ball, gameObject);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        DeadBawl();
+        ball.Update();
     }
 
-    void DeadBawl(){
-        if(timer<0)
-        {
-            Destroy(gameObject);
-            Subject.ChangeLives();
-            if (GameState.life == 0)
-            {
-                Subject.GameOver();
-            }
-            
-        }
-    }
+
     
 }

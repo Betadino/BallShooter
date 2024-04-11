@@ -1,8 +1,9 @@
-public class Game{
-    private IGameState currentState;
+using UnityEngine;
 
-    Player player;
-    public void SetState(IGameState state)
+public class Ball{
+    private IBallState currentState;
+
+    public void SetState(IBallState state, Ball ball, GameObject go)
     {
         if(currentState!=null)
         {
@@ -12,7 +13,7 @@ public class Game{
 
         if(currentState!=null)
         {
-            currentState.OnEnterState(player);
+            currentState.OnEnterState(ball, go);
         }
     }
 

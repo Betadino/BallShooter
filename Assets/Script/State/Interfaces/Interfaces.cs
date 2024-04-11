@@ -1,7 +1,8 @@
+using UnityEngine;
+
 public interface IGameState
 {
-    
-    void OnEnterState(Player? player);
+    void OnEnterState();
     void OnUpdateState();
     void OnExitState();
 }
@@ -22,7 +23,7 @@ public interface IUIState
 
 public interface IBallState
 {
-    void OnEnterState();
+    void OnEnterState(Ball? ball, GameObject? go);
     void OnUpdateState();
     void OnExitState();
 }
